@@ -8,6 +8,22 @@ var questionArray = ['Did I attend UC Berkeley?', 'Is fullstack development part
 var myAnswerArray = ['yes', 'yes', 'yes', 'yes'];
 var inputAnswerArray = ['yes', 'y'];
 
+//function to execute for loop
+function guessingGameLoop(){
+  for(var i = 0; i < questionArray.length; i++){
+    var answer = prompt(questionArray[i]);
+    var lowerAnswer = answer.toLowerCase();
+    if (lowerAnswer === inputAnswerArray.indexOf(0) || lowerAnswer === inputAnswerArray.indexOf(1))
+    {
+      console.log('That is correct!');
+    }
+    else{
+      console.log('That is incorrect! The answer is \"yes\"!');
+    }
+  }
+}
+guessingGameLoop();
+
 // var answerOne = prompt(questionArray[0]);
 // var answerOne = answerOne.toLowerCase();
 // if(answerOne === myAnswerArray[0]){
@@ -43,14 +59,14 @@ var inputAnswerArray = ['yes', 'y'];
 // var myAnswerArray = ['YES', 'YES', 'YES', 'YES'];
 
 //loop to run questions
-for(var i = 0; i < questionArray.Length; i++){
-  var answer = prompt(questionArray[i]);
-  var lowerAnswer = answer.toLowerCase();
-  if (lowerAnswer === inputAnswerArray.indexOf(0) || lowerAnswer === inputAnswerArray.indexOf(1))
-  {
-    console.log('That is correct!');
-  }
-  else{
-    console.log('That is incorrect! The answer is \"yes\"!');
-  }
-}
+// for(var i = 0; i < questionArray.Length; i++){
+//   var answer = prompt(questionArray[i]);
+//   var lowerAnswer = answer.toLowerCase();
+//   if (lowerAnswer === inputAnswerArray.indexOf(0) || lowerAnswer === inputAnswerArray.indexOf(1))
+//   {
+//     console.log('That is correct!');
+//   }
+//   else{
+//     console.log('That is incorrect! The answer is \"yes\"!');
+//   }
+// }
