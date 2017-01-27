@@ -7,7 +7,7 @@ if(userName == null || userName === ""){
 alert('Hello ' + userName + '. Thanks for coming to my site!');
 
 //Setup Arrays
-var questionArray = ['Did I attend UC Berkeley?', 'Is fullstack development part of my long term goals?', 'Do I currently work as a SDET?', 'Is Paris my dream vacation destination?'];
+var questionArray = ['Did I attend UC Berkeley?', 'Is fullstack development part of my long term goals?', 'Do I currently work as a SDET?', 'Is Paris my dream vacation destination?', 'Is prime rib one of my favorite meals?', 'Do I have a dog named, Eli?'];
 var myAnswerArray = ['yes', 'yes', 'yes', 'yes'];
 var inputAnswerArray = ['yes', 'y'];
 
