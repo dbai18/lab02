@@ -1,6 +1,9 @@
 
 //Greeting
 var userName = prompt ('What\'s your name?');
+if(userName == null || userName === ""){
+  userName = "guest";
+}
 alert('Hello ' + userName + '. Thanks for coming to my site!');
 
 //Setup Arrays
