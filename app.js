@@ -22,7 +22,7 @@ function guessingGameLoop(){
     }
   }
 }
-guessingGameLoop();
+// guessingGameLoop();
 
 // var answerOne = prompt(questionArray[0]);
 // var answerOne = answerOne.toLowerCase();

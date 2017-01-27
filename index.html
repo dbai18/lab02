@@ -7,10 +7,14 @@
 <header></header>
 <nav></nav>
 <body>
-  <h2>About Me</h2>
+  <h1>About Me</h1>
   <ul>
-    <li>Education: IT Management BA - UC Berkeley</li>
-    <li>Work Experience:
+    <li id=heading>Education:</li>
+      <ol>
+        <li>UC Berkeley - IT Management (BA)</li>
+        <li>Current Codefellows student</li>
+      </ol>
+    <li id=heading>Work Experience:</li>
       <ol>
         <li>SDET AIM Consulting - 2.5 years</li>
         <ul>
@@ -22,8 +26,10 @@
           <li id="location">Disney Internet Group</li>
         </ul>
       </ol>
-    </li>
-    <li>Long term goals: Becoming more adept with fullstack development and testing</li>
+    <li id=heading>Long term goals:</li>
+      <ul>
+        <li>Becoming more adept with fullstack development and testing</li>
+      </ul>
   </ul>
   <h4>Lab Questions</h4>
   <blockquote>
@@ -31,6 +37,7 @@
     <p>Is fullstack development part of my long term goals?</p>
     <p>Do I currently work as a SDET?</p>
     <p>Is Paris my dream vacation destination?</p>
+    <button onclick="guessingGameLoop()">Click Me for the Guessing Game!</button>
   </blockquote>
   <footer></footer>
   <script src="app.js"></script>
