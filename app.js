@@ -13,7 +13,7 @@ function guessingGameLoop(){
   for(var i = 0; i < questionArray.length; i++){
     var answer = prompt(questionArray[i]);
     var lowerAnswer = answer.toLowerCase();
-    if (lowerAnswer === inputAnswerArray.indexOf(0) || lowerAnswer === inputAnswerArray.indexOf(1))
+    if (inputAnswerArray.indexOf(lowerAnswer) === 0 || inputAnswerArray.indexOf(lowerAnswer) === 1)
     {
       console.log('That is correct!');
     }
