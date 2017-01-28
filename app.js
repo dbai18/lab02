@@ -7,21 +7,21 @@ if(userName == null || userName === ""){
 alert('Hello ' + userName + '. Thanks for coming to my site!');
 
 //Setup Arrays
-var questionArray = ['Did I attend UC Berkeley?', 'Is fullstack development part of my long term goals?', 'Do I currently work as a SDET?', 'Is Paris my dream vacation destination?', 'Is prime rib one of my favorite meals?', 'Do I have a dog named, Eli?'];
+var questionArray = ['Did I attend UC Berkeley?', 'Is fullstack development part of my long term goals?', 'Do I currently work as a SDET?', 'Is Paris my dream vacation destination?', 'Do I have a dog named, Eli?', 'What is one of my favorite dishes?'];
 var myAnswerArray = ['yes', 'yes', 'yes', 'yes'];
-var inputAnswerArray = ['yes', 'y'];
+var inputAnswerArray = ['yes', 'y', 'beef noodle soup', 'prime rib'];
 
 //function to execute for loop
 function guessingGameLoop(){
   for(var i = 0; i < questionArray.length; i++){
     var answer = prompt(questionArray[i]);
     var lowerAnswer = answer.toLowerCase();
-    if (inputAnswerArray.indexOf(lowerAnswer) === 0 || inputAnswerArray.indexOf(lowerAnswer) === 1)
-    {
+    if (i === 5 && (inputAnswerArray.indexOf(lowerAnswer) === 3 || inputAnswerArray.indexOf(lowerAnswer) === 2)){
+      console.log('Yum! That is correct!');
+    }else if (inputAnswerArray.indexOf(lowerAnswer) >= 0 && i <= 4){
       console.log('That is correct!');
-    }
-    else{
-      console.log('That is incorrect! The answer is \"yes\"!');
+    }else{
+      console.log('That is incorrect!');
     }
   }
 }
