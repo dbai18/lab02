@@ -1,9 +1,10 @@
 
 //Greeting
 var userName = prompt ('What\'s your name?');
-if(userName == null || userName === ""){
-  userName = "guest";
-}
+// if(userName == null || userName === ''){
+//   userName = 'guest';
+// }
+if (!userName) username = 'guest';
 alert('Hello ' + userName + '. Thanks for coming to my site!');
 
 //Setup Arrays
