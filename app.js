@@ -1,75 +1,91 @@
 
 //Greeting
 var userName = prompt ('What\'s your name?');
-if(userName == null || userName === ""){
-  userName = "guest";
-}
+// if(userName == null || userName === ''){
+//   userName = 'guest';
+// }
+if (!userName) userName = 'guest';
 alert('Hello ' + userName + '. Thanks for coming to my site!');
 
-//Setup Arrays
-var questionArray = ['Did I attend UC Berkeley?', 'Is fullstack development part of my long term goals?', 'Do I currently work as a SDET?', 'Is Paris my dream vacation destination?', 'Do I have a dog named, Eli?', 'What is one of my favorite dishes?'];
-var myAnswerArray = ['yes', 'yes', 'yes', 'yes'];
-var inputAnswerArray = ['yes', 'y', 'beef noodle soup', 'prime rib'];
-
+//Setup //8 questions
+var questionArray = ['Did I attend UC Berkeley?', 'Is fullstack development part of my long term goals?', 'Do I currently work as a SDET?', 'Is Paris my dream vacation destination?', 'Do I have a dog named, Eli?', 'What is one of my favorite dishes?', 'Guess a number between 1 to 100', 'What are my favorite food destination cities?'];
+// var myAnswerArray = ['yes', 'yes', 'yes', 'yes'];
+//# of answers: 9
+var inputAnswerArray = ['yes', 'y', 'beef noodle soup', 'prime rib', '88', 'taipei', 'tokyo', 'san sebastian', 'paris'];
+var correctCounter = 0;
+var incorrectCounter = 0;
 //function to execute for loop
 function guessingGameLoop(){
   for(var i = 0; i < questionArray.length; i++){
     var answer = prompt(questionArray[i]);
-    var lowerAnswer = answer.toLowerCase();
-    if (i === 5 && (inputAnswerArray.indexOf(lowerAnswer) === 3 || inputAnswerArray.indexOf(lowerAnswer) === 2)){
+
+    //verifying typeof answer variable
+    if(typeof answer === "string"){
+      var inputAnswer = answer.toLowerCase();
+      console.log('lowercased');
+    }else{
+      var inputAnswer = answer;
+      console.log('nothing done');
+    }
+    if((i === 7) && inputAnswerArray.indexOf(inputAnswer) >= 5){
+      console.log('That is correct! ' + inputAnswerArray[5] + ', ' + inputAnswerArray[6] + ', ' + inputAnswerArray[7] + ', and ' + inputAnswerArray[8] + ' are the answers');
+      correctCounter++;
+    }else if(i === 7 && inputAnswerArray.indexOf(inputAnswer) < 5){
+      console.log('That is incorrect. Please try again.');
+      for(var tryGuesses = 0; tryGuesses <= 4; tryGuesses++){
+        var cityGuess = prompt(questionArray[7]);
+        if(inputAnswerArray.indexOf(cityGuess) < 5){
+          console.log('Incorrect, please try again.');
+          incorrectCounter++;
+        }else if(inputAnswerArray.indexOf(cityGuess) >= 5){
+          console.log('That is correct!');
+          correctCounter++;
+          break;
+        }else{
+
+        }
+      }
+      console.log(inputAnswerArray[5] + ', ' + inputAnswerArray[6] + ', ' + inputAnswerArray[7] + ', and ' + inputAnswerArray[8] + ' are the answers');
+    }else if((i === 6) && inputAnswerArray.indexOf(inputAnswer) === 4){
+      console.log('That is correct! ' + inputAnswerArray[4] + ' is the number!');
+      correctCounter++;
+    }else if(i === 6 && inputAnswerArray.indexOf(inputAnswer) !== 4){
+      if(inputAnswer > inputAnswerArray[4] || inputAnswer < inputAnswerArray[4]){
+        if(inputAnswer > inputAnswerArray[4]){
+          console.log('The guess is too high.');
+          incorrectCounter++;
+        }else{
+          console.log('The guess is too low.');
+          incorrectCounter++;
+        }for(var guessTries = 0; guessTries <= 2; guessTries++){
+          var numberGuess = prompt(questionArray[6]);
+          if(numberGuess > inputAnswerArray[4]){
+            console.log('The guess is too high.');
+            incorrectCounter++;
+          }else if(numberGuess < inputAnswerArray[4]){
+            console.log('The guess is too low.');
+            incorrectCounter++;
+          }else if(numberGuess === inputAnswerArray[4]){
+            console.log('That is correct!');
+            correctCounter++;
+            break;
+          }else{
+          }
+        }
+        console.log('The correct answer is: ' + inputAnswerArray[4] +'.');
+      }
+    }
+    else if (i === 5 && (inputAnswerArray.indexOf(inputAnswer) === 3 || inputAnswerArray.indexOf(inputAnswer) === 2)){
       console.log('Yum! That is correct!');
-    }else if (inputAnswerArray.indexOf(lowerAnswer) >= 0 && i <= 4){
+      correctCounter++;
+    }else if (inputAnswerArray.indexOf(inputAnswer) >= 0 && i <= 4){
       console.log('That is correct!');
+      correctCounter++;
     }else{
       console.log('That is incorrect!');
+      incorrectCounter++;
     }
+    console.log('Correct answers: ' + correctCounter);
+    console.log('Incorrect answers: ' + incorrectCounter);
   }
 }
-// guessingGameLoop();
-
-// var answerOne = prompt(questionArray[0]);
-// var answerOne = answerOne.toLowerCase();
-// if(answerOne === myAnswerArray[0]){
-//   alert('That is correct!');
-// }else{
-//   alert('That is incorrect! The correct answer is ' + myAnswerArray[0] + ".");
-// }
-//
-// var answerTwo = prompt(questionArray[1]);
-// var answerTwo = answerTwo.toLowerCase();
-// if(answerTwo === myAnswerArray[1]){
-//   alert('That is correct!');
-// }else{
-//   alert('That is incorrect! The correct answer is ' + myAnswerArray[1] + ".");
-// }
-//
-// var answerThree = prompt(questionArray[2]);
-// var answerThree = answerThree.toLowerCase();
-// if(answerThree === myAnswerArray[2]){
-//   alert('That is correct!');
-// }else{
-//   alert('That is incorrect! The correct answer is ' + myAnswerArray[2] + ".");
-// }
-//
-// var answerFour = prompt(questionArray[3]);
-// var answerFour = answerFour.toLowerCase();
-// if(answerFour === myAnswerArray[3]){
-//   alert('That is correct!');
-// }else{
-//   alert('That is incorrect! The correct answer is ' + myAnswerArray[3] + ".");
-// }
-
-// var myAnswerArray = ['YES', 'YES', 'YES', 'YES'];
-
-//loop to run questions
-// for(var i = 0; i < questionArray.Length; i++){
-//   var answer = prompt(questionArray[i]);
-//   var lowerAnswer = answer.toLowerCase();
-//   if (lowerAnswer === inputAnswerArray.indexOf(0) || lowerAnswer === inputAnswerArray.indexOf(1))
-//   {
-//     console.log('That is correct!');
-//   }
-//   else{
-//     console.log('That is incorrect! The answer is \"yes\"!');
-//   }
-// }
